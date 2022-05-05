@@ -15,6 +15,7 @@
 - Now if the partition size is not sufficient then the installation will fail
 - Added and update addon (A5.0 - A12.1)
 - Rename Android 12.L to 12.1
+- Update LiteGapps Controller V9
 
 - Note Android 11 + coming soon update
 
