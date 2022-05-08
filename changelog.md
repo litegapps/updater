@@ -16,6 +16,8 @@
 - Added and update addon (A5.0 - A12.1)
 - Rename Android 12.L to 12.1
 - Update LiteGapps Controller V9
+- Fix Google photos force close
+- Update Android 13 Beta 1
 
 - Note Android 11 + coming soon update
 
