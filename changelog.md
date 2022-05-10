@@ -19,5 +19,4 @@
 - Fix Google photos force close
 - Update Android 13 Beta 1
 
-- Note Android 11 + coming soon update
 
