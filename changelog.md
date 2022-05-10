@@ -18,5 +18,5 @@
 - Update LiteGapps Controller V9
 - Fix Google photos force close
 - Update Android 13 Beta 1
-
+- Support skip setup wizard
 
