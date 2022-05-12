@@ -19,4 +19,5 @@
 - Fix Google photos force close
 - Update Android 13 Beta 1
 - Support skip setup wizard
+- Fix google maps slow detect location
 
