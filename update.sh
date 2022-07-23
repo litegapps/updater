@@ -30,9 +30,9 @@ printmid() {
   echo "$(printf '%*s' "${indent}" '') $@"
 }
 
-version=v2.5
-versioncode=25
-changelog=https://raw.githubusercontent.com/litegapps/updater/main/changelog.md
+version=v2.6
+versioncode=26
+changelog=https://raw.githubusercontent.com/litegapps/updater/main/changelog/litegapps.md
 
 
 #litegapps
@@ -106,7 +106,7 @@ for ARCH in $arch; do
 	for API in $api; do
 		for TYPE in MAGISK RECOVERY AUTO; do
 			unset URL
-			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/nano/%5B${TYPE}%5DLiteGapps_Nano_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
+			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/nano/$version/%5B${TYPE}%5DLiteGapps_Nano_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
 			unset DIR
 			DIR=$BASE/core/litegapps/nano/$ARCH/$API/$TYPE
 			if [ ! -d $DIR ]; then
@@ -129,7 +129,7 @@ for ARCH in $arch; do
 	for API in $api; do
 		for TYPE in MAGISK RECOVERY AUTO; do
 			unset URL
-			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/basic/%5B${TYPE}%5DLiteGapps_Basic_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
+			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/basic/$version/%5B${TYPE}%5DLiteGapps_Basic_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
 			unset DIR
 			DIR=$BASE/core/litegapps/basic/$ARCH/$API/$TYPE
 			if [ ! -d $DIR ]; then
@@ -152,7 +152,7 @@ for ARCH in $arch; do
 	for API in $api; do
 		for TYPE in MAGISK RECOVERY AUTO; do
 			unset URL
-			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/user/%5B${TYPE}%5DLiteGapps_User_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
+			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/user/$version/%5B${TYPE}%5DLiteGapps_User_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
 			unset DIR
 			DIR=$BASE/core/litegapps/user/$ARCH/$API/$TYPE
 			if [ ! -d $DIR ]; then
@@ -175,7 +175,7 @@ for ARCH in $arch; do
 	for API in $api; do
 		for TYPE in MAGISK RECOVERY AUTO; do
 			unset URL
-			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/go/%5B${TYPE}%5DLiteGapps_Go_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
+			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/go/$version/%5B${TYPE}%5DLiteGapps_Go_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
 			unset DIR
 			DIR=$BASE/core/litegapps/go/$ARCH/$API/$TYPE
 			if [ ! -d $DIR ]; then
@@ -198,7 +198,7 @@ for ARCH in $arch; do
 	for API in $api; do
 		for TYPE in MAGISK RECOVERY AUTO; do
 			unset URL
-			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/core/%5B${TYPE}%5DLiteGapps_Core_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
+			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/core/$version/%5B${TYPE}%5DLiteGapps_Core_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
 			unset DIR
 			DIR=$BASE/core/litegapps/core/$ARCH/$API/$TYPE
 			if [ ! -d $DIR ]; then
@@ -221,7 +221,7 @@ for ARCH in $arch; do
 	for API in $api; do
 		for TYPE in MAGISK RECOVERY AUTO; do
 			unset URL
-			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/lite/%5B${TYPE}%5DLiteGapps_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
+			URL=https://sourceforge.net/projects/litegapps/files/litegapps/$ARCH/$API/lite/$version/%5B${TYPE}%5DLiteGapps_${ARCH}_$(get_android_version $API)_${version}_official.zip/download
 			unset DIR
 			DIR=$BASE/core/litegapps/lite/$ARCH/$API/$TYPE
 			if [ ! -d $DIR ]; then
@@ -238,3 +238,65 @@ for ARCH in $arch; do
 		done
 	done
 done
+
+
+changelog=https://raw.githubusercontent.com/litegapps/updater/main/changelog/litegapps++_reguler.md
+echo "- Make Litegapps++ reguler"
+for TYPE in MAGISK RECOVERY AUTO; do
+		unset URL
+		URL=https://sourceforge.net/projects/litegapps/files/litegapps++/reguler/$version/%5B${TYPE}%5DLiteGapps++_${version}_official.zip/download
+		unset DIR
+		DIR=$BASE/core/litegapps++/reguler/$TYPE
+		if [ ! -d $DIR ]; then
+			mkdir -p $DIR
+		else
+			rm -rf $DIR
+			mkdir -p $DIR
+		fi
+		cp -pf $BASE/update.json $DIR/
+		SED "1111" "$version" $DIR/update.json
+		SED "2222" "$versioncode" $DIR/update.json
+		SED "3333" "$URL" $DIR/update.json
+		SED "4444" "$changelog" $DIR/update.json
+done
+
+changelog=https://raw.githubusercontent.com/litegapps/updater/main/changelog/litegapps++_lts.md
+echo "- Make Litegapps++ LTS"
+for TYPE in MAGISK RECOVERY AUTO; do
+		unset URL
+		URL=https://sourceforge.net/projects/litegapps/files/litegapps++/lts/$version/%5B${TYPE}%5DLiteGapps++_LTS_${version}_official.zip/download
+		unset DIR
+		DIR=$BASE/core/litegapps++/lts/$TYPE
+		if [ ! -d $DIR ]; then
+			mkdir -p $DIR
+		else
+			rm -rf $DIR
+			mkdir -p $DIR
+		fi
+		cp -pf $BASE/update.json $DIR/
+		SED "1111" "$version" $DIR/update.json
+		SED "2222" "$versioncode" $DIR/update.json
+		SED "3333" "$URL" $DIR/update.json
+		SED "4444" "$changelog" $DIR/update.json
+done
+
+changelog=https://raw.githubusercontent.com/litegapps/updater/main/changelog/litegapps++_microg.md
+echo "- Make Litegapps++ MicroG"
+for TYPE in MAGISK RECOVERY AUTO; do
+		unset URL
+		URL=https://sourceforge.net/projects/litegapps/files/litegapps++/microg/$version/%5B${TYPE}%5DLiteGapps++_MicroG_${version}_official.zip/download
+		unset DIR
+		DIR=$BASE/core/litegapps++/microg/$TYPE
+		if [ ! -d $DIR ]; then
+			mkdir -p $DIR
+		else
+			rm -rf $DIR
+			mkdir -p $DIR
+		fi
+		cp -pf $BASE/update.json $DIR/
+		SED "1111" "$version" $DIR/update.json
+		SED "2222" "$versioncode" $DIR/update.json
+		SED "3333" "$URL" $DIR/update.json
+		SED "4444" "$changelog" $DIR/update.json
+done
+

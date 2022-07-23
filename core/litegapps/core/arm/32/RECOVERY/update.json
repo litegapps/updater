@@ -1,6 +1,6 @@
 {
-  "version": "v2.5",
-  "versionCode": "25",
-  "zipUrl": "https://sourceforge.net/projects/litegapps/files/litegapps/arm/32/core/%5BRECOVERY%5DLiteGapps_Core_arm_12.1_v2.5_official.zip/download",
-  "changelog": "https://raw.githubusercontent.com/litegapps/updater/main/changelog.md"
+  "version": "v2.6",
+  "versionCode": "26",
+  "zipUrl": "https://sourceforge.net/projects/litegapps/files/litegapps/arm/32/core/v2.6/%5BRECOVERY%5DLiteGapps_Core_arm_12.1_v2.6_official.zip/download",
+  "changelog": "https://raw.githubusercontent.com/litegapps/updater/main/changelog/litegapps.md"
 }
