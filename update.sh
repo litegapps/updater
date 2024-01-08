@@ -31,8 +31,8 @@ printmid() {
   echo "$(printf '%*s' "${indent}" '') $@"
 }
 
-version=v3.1
-versioncode=31
+version=v3.2
+versioncode=32
 changelog=https://raw.githubusercontent.com/litegapps/updater/main/changelog/litegapps.md
 
 
