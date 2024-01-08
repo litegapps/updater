@@ -1,6 +1,8 @@
-# Changelog
+## Changelog
  
-**v2.6**
-
-- Added Android 13 
-- 
+### v3.1
+- Initial Android 14.0 stable release
+- Change base to Google pixel 8 pro
+- Added core variant
+- Update Playstore,gms,gsf
+- And some other fixes
